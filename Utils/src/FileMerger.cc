@@ -180,11 +180,11 @@ panda::FileMerger::merge(char const* _outPath, long _nEvents/* = -1*/)
 
       iEntry = 0;
       while (run.getEntry(iEntry++) > 0) {
-        if (savedRuns.count(run.runNumber) == 0)
+        if (savedRuns.count(run.run) == 0)
           continue;
 
-        if (runSources.count(run.runNumber) == 0)
-          runSources.emplace(run.runNumber, std::make_pair(iS, iEntry - 1));
+        if (runSources.count(run.run) == 0)
+          runSources.emplace(run.run, std::make_pair(iS, iEntry - 1));
 
         if (inHLTTree) {
           inHLTTree->GetEntry(run.hltMenu);
@@ -197,11 +197,11 @@ panda::FileMerger::merge(char const* _outPath, long _nEvents/* = -1*/)
 
           unsigned menuId(mItr - hltMenuList.begin());
 
-          auto hltItr(runToMenuMap.find(run.runNumber));
+          auto hltItr(runToMenuMap.find(run.run));
           if (hltItr == runToMenuMap.end())
-            runToMenuMap.emplace(run.runNumber, menuId);
+            runToMenuMap.emplace(run.run, menuId);
           else if (hltItr->second != menuId) {
-            std::cerr << "Inconsistent HLT menu found for run " << run.runNumber << " in file " << path << std::endl;
+            std::cerr << "Inconsistent HLT menu found for run " << run.run << " in file " << path << std::endl;
             throw std::runtime_error("HLT");
           }
         }

@@ -353,5 +353,5 @@ puppiCA15Jets.constituents->pfCandidates
 puppiCA15Jets.subjets->subjets
 
 {Run}
-runNumber/i
+run/i
 hltMenu/i

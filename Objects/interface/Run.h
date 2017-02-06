@@ -12,7 +12,7 @@ namespace panda {
     ~Run() {}
     Run& operator=(Run const&);
 
-    UInt_t runNumber{};
+    UInt_t run{};
     UInt_t hltMenu{};
 
   protected:
