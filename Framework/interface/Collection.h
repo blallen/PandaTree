@@ -179,14 +179,8 @@ namespace panda {
   void
   Collection<E>::push_back(const_reference _elem)
   {
-    if (CollectionBase::size() == data.nmax()) {
-      // reallocate elements with nmax *= 2
-      // all references and pointers to data members and array elements will become invalid
-      reallocate_(data.nmax() * 2);
-    }
-
-    (*this)[CollectionBase::size()] = _elem;
-    ++CollectionBase::size();
+    CollectionBase::resize(CollectionBase::size() + 1);
+    back() = _elem;
   }
 
   template<class E>
