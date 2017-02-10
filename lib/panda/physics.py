@@ -334,7 +334,7 @@ class PhysicsObject(Definition, Object):
         if len(self.constants) != 0:
             src.newline()
             for constant in self.constants:
-                constant.write_def(src)
+                constant.write_def(src, cls = '{NAMESPACE}::{name}'.format(**subst))
 
         if self.is_singlet():
             src.newline()
