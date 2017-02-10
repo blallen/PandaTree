@@ -94,7 +94,7 @@ parent/GenParticleRef
 pdgid/I
 
 [PFCand>ParticleM]
-q/S
+charge/B
 puppiW/F
 puppiWNoLep/F
 pftype/I
@@ -107,7 +107,7 @@ eta/F
 phi/F
 
 [Lepton>Particle]
-q/S
+charge/B
 loose/O
 medium/O
 tight/O
@@ -142,7 +142,7 @@ double m() const override { return 1.05658e-2; }
 double combIso() const override { return chIso + std::max(nhIso + phIso - 0.5 * puIso, 0.); }
 
 [Tau>ParticleM]
-q/S
+charge/B
 decayMode/O
 decayModeNew/O
 looseIsoMVA/O

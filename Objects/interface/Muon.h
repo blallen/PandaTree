@@ -21,7 +21,7 @@ namespace panda {
       Float_t* phi{0};
       */
       /* Lepton
-      Short_t* q{0};
+      Char_t* charge{0};
       Bool_t* loose{0};
       Bool_t* medium{0};
       Bool_t* tight{0};
@@ -65,7 +65,7 @@ namespace panda {
     Float_t& phi;
     */
     /* Lepton
-    Short_t& q;
+    Char_t& charge;
     Bool_t& loose;
     Bool_t& medium;
     Bool_t& tight;

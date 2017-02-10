@@ -23,7 +23,7 @@ namespace panda {
       /* ParticleM
       Float_t* mass{0};
       */
-      Short_t* q{0};
+      Char_t* charge{0};
       Float_t* puppiW{0};
       Float_t* puppiWNoLep{0};
       Int_t* pftype{0};
@@ -61,7 +61,7 @@ namespace panda {
     /* ParticleM
     Float_t& mass;
     */
-    Short_t& q;
+    Char_t& charge;
     Float_t& puppiW;
     Float_t& puppiWNoLep;
     Int_t& pftype;
