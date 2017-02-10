@@ -15,11 +15,13 @@ class Constant(Definition):
         if context == 'class':
             out.writeline('{decl};'.format(decl = self.decl))
         elif context == 'global':
+            # in global (non-class) context, const values can be directly written in the header
             out.writeline('{decl}{value};'.format(decl = self.decl, value = self.value))
 
-    def write_def(self, out):
+    def write_def(self, out, cls):
+        # called only by PhysicsObject to define the values of class static const in the global scope
         out.writeline('/*static*/')
-        out.writeline('{decl}{value};'.format(decl = self.decl.replace('static ', ''), value = self.value))
+        out.writeline('{cls}::{decl}{value};'.format(cls = cls, decl = self.decl.replace('static ', ''), value = self.value))
 
 
 class Assert(Definition):
