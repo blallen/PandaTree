@@ -80,11 +80,11 @@ namespace panda {
     Photon& operator=(Photon const&);
 
 
-    static double const chIsoCuts[2][2][4];
-    static double const nhIsoCuts[2][2][4];
-    static double const phIsoCuts[2][2][4];
-    static double const sieieCuts[2][2][4];
-    static double const hOverECuts[2][2][4];
+    static double chIsoCuts[2][2][4];
+    static double nhIsoCuts[2][2][4];
+    static double phIsoCuts[2][2][4];
+    static double sieieCuts[2][2][4];
+    static double hOverECuts[2][2][4];
 
     bool passCHIso(UInt_t wp) const { return chIso < chIsoCuts[1][isEB ? 0 : 1][wp]; }
     bool passNHIso(UInt_t wp) const { return nhIso < nhIsoCuts[1][isEB ? 0 : 1][wp]; }
