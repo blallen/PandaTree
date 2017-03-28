@@ -23,7 +23,7 @@ namespace panda {
       */
       /* Lepton
       Float_t* pfPt{0};
-      Char_t* charge{0};
+      Short_t* charge{0};
       Bool_t* loose{0};
       Bool_t* medium{0};
       Bool_t* tight{0};
@@ -85,7 +85,7 @@ namespace panda {
 
     /* Lepton
     Float_t& pfPt; // for E: Pt of the dR-closest PF candidate; for Mu: pfP4().pt()
-    Char_t& charge;
+    Short_t& charge;
     Bool_t& loose;
     Bool_t& medium;
     Bool_t& tight;

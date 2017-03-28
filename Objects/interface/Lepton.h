@@ -22,7 +22,7 @@ namespace panda {
       Float_t* phi_{0};
       */
       Float_t* pfPt{0};
-      Char_t* charge{0};
+      Short_t* charge{0};
       Bool_t* loose{0};
       Bool_t* medium{0};
       Bool_t* tight{0};
@@ -63,7 +63,7 @@ namespace panda {
     virtual double combIso() const { return 0.; }
 
     Float_t& pfPt; // for E: Pt of the dR-closest PF candidate; for Mu: pfP4().pt()
-    Char_t& charge;
+    Short_t& charge;
     Bool_t& loose;
     Bool_t& medium;
     Bool_t& tight;

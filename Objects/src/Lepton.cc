@@ -16,7 +16,7 @@ panda::Lepton::datastore::allocate(UInt_t _nmax)
   ParticleP::datastore::allocate(_nmax);
 
   pfPt = new Float_t[nmax_];
-  charge = new Char_t[nmax_];
+  charge = new Short_t[nmax_];
   loose = new Bool_t[nmax_];
   medium = new Bool_t[nmax_];
   tight = new Bool_t[nmax_];
@@ -115,7 +115,7 @@ panda::Lepton::datastore::book(TTree& _tree, TString const& _name, utils::Branch
   TString size(_dynamic ? "[" + _name + ".size]" : TString::Format("[%d]", nmax_));
 
   utils::book(_tree, _name, "pfPt", size, 'F', pfPt, _branches);
-  utils::book(_tree, _name, "charge", size, 'B', charge, _branches);
+  utils::book(_tree, _name, "charge", size, 'S', charge, _branches);
   utils::book(_tree, _name, "loose", size, 'O', loose, _branches);
   utils::book(_tree, _name, "medium", size, 'O', medium, _branches);
   utils::book(_tree, _name, "tight", size, 'O', tight, _branches);
@@ -286,7 +286,7 @@ panda::Lepton::doBook_(TTree& _tree, TString const& _name, utils::BranchList con
   ParticleP::doBook_(_tree, _name, _branches);
 
   utils::book(_tree, _name, "pfPt", "", 'F', &pfPt, _branches);
-  utils::book(_tree, _name, "charge", "", 'B', &charge, _branches);
+  utils::book(_tree, _name, "charge", "", 'S', &charge, _branches);
   utils::book(_tree, _name, "loose", "", 'O', &loose, _branches);
   utils::book(_tree, _name, "medium", "", 'O', &medium, _branches);
   utils::book(_tree, _name, "tight", "", 'O', &tight, _branches);

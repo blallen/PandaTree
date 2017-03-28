@@ -15,7 +15,7 @@ panda::Tau::datastore::allocate(UInt_t _nmax)
 {
   ParticleM::datastore::allocate(_nmax);
 
-  charge = new Char_t[nmax_];
+  charge = new Short_t[nmax_];
   decayMode = new Bool_t[nmax_];
   decayModeNew = new Bool_t[nmax_];
   looseIsoMVA = new Bool_t[nmax_];
@@ -96,7 +96,7 @@ panda::Tau::datastore::book(TTree& _tree, TString const& _name, utils::BranchLis
 
   TString size(_dynamic ? "[" + _name + ".size]" : TString::Format("[%d]", nmax_));
 
-  utils::book(_tree, _name, "charge", size, 'B', charge, _branches);
+  utils::book(_tree, _name, "charge", size, 'S', charge, _branches);
   utils::book(_tree, _name, "decayMode", size, 'O', decayMode, _branches);
   utils::book(_tree, _name, "decayModeNew", size, 'O', decayModeNew, _branches);
   utils::book(_tree, _name, "looseIsoMVA", size, 'O', looseIsoMVA, _branches);
@@ -240,7 +240,7 @@ panda::Tau::doBook_(TTree& _tree, TString const& _name, utils::BranchList const&
 {
   ParticleM::doBook_(_tree, _name, _branches);
 
-  utils::book(_tree, _name, "charge", "", 'B', &charge, _branches);
+  utils::book(_tree, _name, "charge", "", 'S', &charge, _branches);
   utils::book(_tree, _name, "decayMode", "", 'O', &decayMode, _branches);
   utils::book(_tree, _name, "decayModeNew", "", 'O', &decayModeNew, _branches);
   utils::book(_tree, _name, "looseIsoMVA", "", 'O', &looseIsoMVA, _branches);

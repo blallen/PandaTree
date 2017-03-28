@@ -174,7 +174,7 @@ phi/F
 
 [Lepton>ParticleP]
 pfPt/F = -1. // for E: Pt of the dR-closest PF candidate; for Mu: pfP4().pt()
-charge/B
+charge/S
 loose/O
 medium/O
 tight/O
@@ -213,7 +213,7 @@ double m() const override { return 1.05658e-2; }
 double combIso() const override { return chIso + std::max(nhIso + phIso - 0.5 * puIso, 0.); }
 
 [Tau>ParticleM]
-charge/B
+charge/S
 decayMode/O
 decayModeNew/O
 looseIsoMVA/O

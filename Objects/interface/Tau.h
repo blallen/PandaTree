@@ -24,7 +24,7 @@ namespace panda {
       /* ParticleM
       Float_t* mass_{0};
       */
-      Char_t* charge{0};
+      Short_t* charge{0};
       Bool_t* decayMode{0};
       Bool_t* decayModeNew{0};
       Bool_t* looseIsoMVA{0};
@@ -60,7 +60,7 @@ namespace panda {
     void print(std::ostream& = std::cout, UInt_t level = 1) const override;
     void dump(std::ostream& = std::cout) const override;
 
-    Char_t& charge;
+    Short_t& charge;
     Bool_t& decayMode;
     Bool_t& decayModeNew;
     Bool_t& looseIsoMVA;
